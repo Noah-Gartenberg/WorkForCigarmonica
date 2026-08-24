@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5d10ec253e0b444a09f1475afc73ac, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Supercalafradjelesticexpialidotious even though the sound of it is something
+    quite atrociious if you say it loud enough you'll always sound precotious supercalifradgelestic
+    expialidotious
+  - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum
+  - 'Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler
+    Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text
+    Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler
+    Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text
+    Filler Text Filler Text Filler Text Filler Text Filler Text Filler Text Filler
+    Text Filler Text '
+  - Why are you still here?

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718cb2e45e1f0d5478cda943cc283543, type: 3}
+  m_Name: DialogueTreeTest
+  m_EditorClassIdentifier: 
+  sections:
+  - dialogue: {fileID: 11400000, guid: da10698bf15d03e4fb9cb0462d41debd, type: 2}
+    endAfterDialogue: 0
+    branchPoint:
+      question: Why
+      answers:
+      - answerLabel: Yes
+        nextElement: 1
+      - answerLabel: No
+        nextElement: 2
+      - answerLabel: Maybe
+        nextElement: 3
+  - dialogue: {fileID: 11400000, guid: cfc172f3858d82242a007907b24d04de, type: 2}
+    endAfterDialogue: 0
+    branchPoint:
+      question: 'I ask again: why'
+      answers:
+      - answerLabel: fuck off
+        nextElement: 3
+      - answerLabel: I'm sleepy
+        nextElement: 2
+  - dialogue: {fileID: 11400000, guid: a4cb456f98eba1748835481fa21ae26e, type: 2}
+    endAfterDialogue: 1
+    branchPoint:
+      question: No seriously I need an ansewr
+      answers: []
+  - dialogue: {fileID: 11400000, guid: a11ee50470f327e4bbfec1ab341e73c2, type: 2}
+    endAfterDialogue: 1
+    branchPoint:
+      question: No seriously I need an ansewr
+      answers: []

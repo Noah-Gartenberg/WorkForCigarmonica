@@ -1,0 +1,33 @@
+﻿Point and Click Movement
+- declare movespeed variable
+- declare target position
+- declare boolean isMoving
+- declare can interact
+
+- update method
+-- check if mouse is down? If mouse clicked? Either way:
+---- raycast to location at 1/4 height of capsule from floor on y axis
+---- if hit:
+------ if hit implements interaction interface:
+-------- set canInteract to true
+------ Set target position at point hit - radius of capsule
+---- capsule trace to location, - 1/8 height of capsule from floor y axis, with capsule trace being 7/8 height of player capsule
+------ If hit:
+-------- subtract vector of movement direction, length of capsule radius, from target location and try again
+------ else:
+-------- set isMoving to true
+-------- movePlayerMethod called 
+
+setTargetPosition:
+-- if the player can interact:
+---- move back one capsule radius from object, and capsule cast, repeat till no overlapping objects
+-- set moving to true, and move player method call
+
+
+- MovePlayer
+-- basic code of moving
+-- only change is that when the player is done moving, if canInteract was true, interact
+
+Interaction Interface
+- Interact() method header
+

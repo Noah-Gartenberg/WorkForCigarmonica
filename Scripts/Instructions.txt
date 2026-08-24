@@ -1,0 +1,73 @@
+﻿IClickable:
+- Interface that holds the declaration for the "Interact" method. 
+- To use, when making a new script, add a comma after "Monobehavior" at the top, and then write the name of the interface
+- Then override the method declaration in your script (not the interface's) and make that method declaration functional
+
+PointAndClickMove: 
+- the object you're attaching this to must have a charactercontroller
+- Other than this, there shouldn't be too much set up necessary
+- to use, point your mouse, and click a location to move there.
+
+updates: it now sends a raycast during every frame to the mouse, and is hopefully more efficient
+
+Dialogue.cs
+	This is a scriptable object, meaning when you make this file, you can make different instances of it instead of just editing public values
+- Each sentence you use will correspond to one indice in the array of strings held by each instance of this class
+- Download the script
+
+Update:
+DialogueV2.cs:
+- basically what was the normal dialogue system previously, but this is an abstract class 
+	If you want to make a scriptable object of a dialogue section, then you need to make one of the LinearDialogue.cs, not this
+- has two incomplete methods that I don't think are necessary (the stuff about quests)
+- the very last element in the array should have any commands for the system to do when that dialogue ends, or should be null
+	nothing in that last element should have anything you want the player to read
+	List of commands (that should be entered as a string) as of right now:
+	- LOOP: will make it so that whenever the player interacts with that npc, it will loop that dialogue section (currently just a "loop this current section")
+		I might add a "LOOP_OTHER" command so that we can make it loop other dialogue
+		In order for it to stop looping, players must update a condition in the NPC that causes it to stop looping
+	- SET_CONDITION: will set a condition in the speaking NPC's array of conditions (there are only 3 right now)
+		- to use, after the set condition command, enter a integer for the index in its conditions array of that condition, and then enter whether you want it to be true or false
+	- GIVE_ITEM: will give the player an item (not implemented yet)
+	- TRY_TRADE: will check player's inventory to see if it can trade with the player
+	- CHANGE_NAME: will change the name displayed to be the name in the following array element, similar to how set condition works
+	- END: Will end dialogue and hide everything
+		- Must be last command in string
+BranchingDialogue:
+- string for the prompt or question the player gets asked that prompts the answers
+- up to four answer objects, per branch
+- after every branch, there is an option to have a section of transitional linear dialogue 
+	(if we need to make it so the player can ask a question, and then have a branch as transitional dialogue, let me know, I can do that
+		I just didn't think it would be necessary right now, so I didn't yet, plus I got worried about performance
+		- ignore any and all warnings it throws about null values in this class. I ensured it shouldn't cause a problem
+- an integer for the next section to play, if we're doing fully branching dialogue, but I don't think we are, so it is currently unimplemented
+- much like all other types of dialogue, there is a string for dialogues in it. Put commands or nothing here, do not put any dialogue here
+Update: Make a "NULL" Linear Dialogue object, and then give it to elements in the array. The first should just have "SKIP" in it. The second shouldn't have anything in it. 
+	this will ensure that there won't be any null reference errrors for transitional dialogue
+
+NPCDialogue.cs - updated to be NPC_try_2
+	This script will be attached to each NPC character - manages dialogue and sends dialogue to dialogue manager. Each time you click the mouse, whether or not on the object, it will go to the next line, until it runs out of lines
+- give the dialogue variable a reference to one dialogue object for that character
+- set shouldRepeatDialogue to true if you want that npc to repeat a line
+- set currDialogue if you want the npc to start at dialogue after the first sentence/line/etc...
+- Set EndDialogueAfter to the indice of the dialogue before the dialogue that gets repeated
+- provide a reference to the character so that the "Can move" variable in its code can be set
+Update: also stores its dialogue in the class, and then will send it to dialogue manager
+Update Update: if the character is a background character, check that box, and then it will randomly play dialogue lines that it has (each line must have END as it's last line)
+
+To download:
+- literally just download it, then move it to the folder for the corresponding unity project
+- ignore the fact that it's a txt file in the drive, not a cs file. It seems to auto convert to a cs file when downloaded from the drive
+	at least on my computer
+
+DialogueManager.cs (was made for the fall game jam, not by me)
+-Attach this script to a UI GameObject that has a TextMeshProUGUI component, which is used to display dialogue text.
+-Make sure there's only one DialogueManager in the scene by setting it as a singleton in the Awake method.
+-Use ShowDialogue to display a string of text in the dialogue UI.
+-Use HideDialogue to hide the dialogue UI when the interaction is complete.
+(I made one change so we could make it visible or not when you first start the game)
+-To make it so that it's not on by default, just uncheck the OnByDefault box
+
+Update: Foundation was made for fall game jam and not made by me, but a lot of other stuff was made by me
+- will control dialogue: what plays, how players interact with dialogue, displaying stuff to screen, etc...
+	

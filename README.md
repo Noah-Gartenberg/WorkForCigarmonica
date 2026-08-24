@@ -4,7 +4,7 @@ This repository contains both the initial version of the dialogue system I made 
 Cigarmonica is game made for a game jam that was conducted during the spring of my freshman year of college by my college's Game Design Club. Our goal was to build a small game, all together, as a club. While in total there were roughly 10 people participating, I wound up only one of two (originally three) programmers. This was my first experience with developing video games in a team, and my first time ever helping to release a game on Itch.io (or anywhere, for that matter). This project helped me to learn a lot about the Unity Engine, and about programming complex systems which non-technical developers should in theory be able to use.
 The game is about a man who has been arrested and has five days until he is to be executed. The player must try and trade items around the prison for other items, in order to exchange their way to freedom. 
 
-In short though:
+In short for what changes I'd make, though:
 - movement would use a navmesh rather than changing the location
 - Interaction would largely remain generally the same, though actions would probably have an input queue of sorts to ensure the player could walk somewhere and then interact as I think my previous solution was kind of hacky or hard coded if my memory is right
 - There would be an indicator when the cursor is over something that can be interacted with
